@@ -29,4 +29,6 @@
 						@endforeach
 					
 					</ul>
+					
+					<a href="/report">Report an Issue</a>
 @stop
