@@ -86,14 +86,23 @@ min-width: 240px;
 			margin-bottom: 25px;
 		}
 		
-		a {
+		a.reportLink {
 			color: #d2ffa0;
 			font-size: 12px;
+			clear:both;
+			margin-top: 30px;
 		}
 		
 		ul {
 			margin: 0px 0 55px;
 			clear: both;
+		}
+		
+		li a
+		{
+			color: white;
+			font-size: 16px;
+			text-decoration: none;
 		}
 		
 		ul li {
@@ -114,6 +123,21 @@ min-width: 240px;
 			font-family: 'alert';
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
+		}
+		
+		li.issueLine
+		{
+			font-size: 14px;
+		}
+		
+		li.issueActive
+		{
+			color: red;
+		}
+		
+		li.issueInactive
+		{
+			color: gray;
 		}
 		
 		li.softError:before {
@@ -171,7 +195,7 @@ min-width: 240px;
 			font-size: 18px;
 			margin-right: 5px;
 		}
-		li:before {
+		li.noError:before {
 			content: "\31";
 		}
 		li.hardError:before {

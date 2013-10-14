@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -15,8 +15,9 @@ class CreateServices extends Migration {
 		Schema::create('services', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('server_id');
 			$table->string('name');
-			$table->integer('metric');
+			$table->string('type');
 			$table->timestamps();
 		});
 	}

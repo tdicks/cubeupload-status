@@ -667,12 +667,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ff7feea50a741b5ccc8deda44c874af4555f4ca6"
+                "reference": "bf4ddbdaec0b673f7aab010890b70e3a6d63f27e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ff7feea50a741b5ccc8deda44c874af4555f4ca6",
-                "reference": "ff7feea50a741b5ccc8deda44c874af4555f4ca6",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/bf4ddbdaec0b673f7aab010890b70e3a6d63f27e",
+                "reference": "bf4ddbdaec0b673f7aab010890b70e3a6d63f27e",
                 "shasum": ""
             },
             "require": {
@@ -772,7 +772,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-10-12 18:57:01"
+            "time": "2013-10-14 21:59:45"
         },
         {
             "name": "monolog/monolog",
@@ -1261,7 +1261,7 @@
                     "homepage": "http://symfony.com/contributors"
                 },
                 {
-                    "name": "Jean-Fran\u00e7ois Simon",
+                    "name": "Jean-François Simon",
                     "email": "jeanfrancois.simon@sensiolabs.com"
                 }
             ],

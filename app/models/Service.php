@@ -2,10 +2,14 @@
 
 	class Service extends Eloquent
 	{
-
 		public function issues()
 		{
 			return $this->belongsToMany('Issue');
+		}
+		
+		public function server()
+		{
+			return $this->belongsTo('Server');
 		}
 		
 		public function issuesConfirmed()

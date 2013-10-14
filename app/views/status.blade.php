@@ -2,33 +2,37 @@
 
 @section('content')
 					<ul>
-						@foreach( $services as $service )
-						@if( $service->issuesConfirmed() )
+						@foreach( $servers as $server )
+						@if( $server->serviceStatus() == 'ConfirmedIssue' )
 						<li class="hardError">
-							{{ $service->name }}
+							<a href="/server/view/{{ $server->id }}">{{ $server->name }}</a>
 							<p>
-								@foreach( $service->issues()->get() as $issue )
-								{{ $issue->title }}
+								@foreach( $server->services()->get() as $service )
+								@if( $service->issuesConfirmed() )
+								! {{ $service->name }}
+								@endif
 								@endforeach
 							</p>
 						</li>
-						@elseif( $service->issuesUnconfirmed() )
+						@elseif( $server->serviceStatus() == 'UnconfirmedIssue' )
 						<li class="softError">
-							{{ $service->name }}
+							<a href="/server/view/{{ $server->id }}">{{ $server->name }}</a>
 							<p>
-								@foreach( $service->issues()->get() as $issue )
-								{{ $issue->title }}
+								@foreach( $server->services()->get() as $service )
+								@if( $service->issuesUnconfirmed() )
+								? {{ $service->name }}
+								@endif
 								@endforeach
 							</p>
 						</li>
 						@else
-						<li>
-							{{ $service->name }}
+						<li class="noError">
+							<a href="/server/view/{{ $server->id }}">{{ $server->name }}</a>
 						</li>
 						@endif
 						@endforeach
 					
 					</ul>
 					
-					<a href="/report">Report an Issue</a>
+					<a class="reportLink" href="/report">Report an Issue</a>
 @stop

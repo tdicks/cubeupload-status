@@ -37,7 +37,17 @@ class StatusUpdateCommand extends Command {
 	 */
 	public function fire()
 	{
-		//
+		
+		$issue = new Issue();
+		$issue->title = 'Oh dear';
+		$issue->save();
+		
+		$web = Service::whereName('Web Server')->first();
+		$web->issues()->save( $issue );
+		
+		
+		
+		$this->info('Works');
 	}
 
 	/**
@@ -48,7 +58,7 @@ class StatusUpdateCommand extends Command {
 	protected function getArguments()
 	{
 		return array(
-			array('example', InputArgument::REQUIRED, 'An example argument.'),
+			//array('example', InputArgument::REQUIRED, 'An example argument.'),
 		);
 	}
 
@@ -60,7 +70,7 @@ class StatusUpdateCommand extends Command {
 	protected function getOptions()
 	{
 		return array(
-			array('example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null),
+			//array('example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null),
 		);
 	}
 

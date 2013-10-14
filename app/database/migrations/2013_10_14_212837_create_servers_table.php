@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReportsTable extends Migration {
+class CreateServersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,13 @@ class CreateReportsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('reports', function(Blueprint $table)
+		Schema::create('servers', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name');
-			$table->string('email');
-			$table->string('message');
+			$table->string('ip');
+			$table->string('hostname');
+			$table->integer('metric');
 			$table->timestamps();
 		});
 	}
@@ -29,7 +30,7 @@ class CreateReportsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('reports');
+		Schema::drop('servers');
 	}
 
 }

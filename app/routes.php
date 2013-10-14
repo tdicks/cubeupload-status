@@ -13,10 +13,11 @@
 
 Route::get('/', function()
 {
-	$services = Service::all()->sortBy(function($service) { return $service->metric; });
-	return View::make('status')->with( array( 'services' => $services ) );
+	$servers = Server::all()->sortBy(function($server) { return $server->metric; });
+	return View::make('status')->with( array( 'servers' => $servers ) );
 });
 
 Route::controller('service', 'ServiceController');
+Route::controller('server', 'ServerController');
 Route::controller('issue', 'IssueController');
 Route::controller('report', 'ReportController');
